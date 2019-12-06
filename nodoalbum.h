@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdlib>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -11,15 +11,17 @@ class Nodoalbum
 		char gender[20];
 		char artist[20];
 		Nodoalbum *next;
+		
 	public:
 		void Setname(char);
 		void Setgender(char);
 		void Setartist(char);
-		void Setnext(*Nodoalbum);
+		void Setnext(Nodoalbum *);
 		
 		char Getname();
 		char Getgender();
 		char Getartist();
 		Nodoalbum Getnext();
-}
+};
+
 

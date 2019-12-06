@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdlib>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -41,8 +41,6 @@ switch(){
 }
 
 
-cout<<"--------bienvenido al menu de canciones---------";
-cout<<"-------------escuchar canciones-----------------";
-
 system("pause");
 return 0;
+

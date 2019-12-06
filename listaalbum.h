@@ -5,15 +5,22 @@
 using namespace std;
 
 
-class Lista
+class Listaalbum
 {
 	private:
-		Nodo *;
+		Nodoalbum *Cabeza;
 	public:
-		Lista();
-		void Set_
-		virtual ~Lista();
+		Listaalbum();
+		~Listaalbum();
+		
+		void Set_cabeza(Nodoalbum *);
+		Nodoalbum* Get_cabeza();
+		Nodoalbum* Get_ultimo();
+		void Agregar(Nodoalbum *);
+		Nodoalbum* buscar(int);
+		void Eliminar(int);
 		
 		
 };
 #endif
+

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "Menu.hpp"
+#include "menurock.cpp"
 
 int main(){
     
@@ -16,3 +16,4 @@ int main(){
     
 	return 0;
 }
+
