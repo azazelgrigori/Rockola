@@ -4,7 +4,8 @@
 using namespace std;
 
 
-int main()
+int main(){
+
 
 int option;
 
@@ -18,7 +19,7 @@ cout<<"---------------6-eliminar album-----------------";
 cout<<"--------------------7-salir---------------------";
 cin>>option;
 
-switch(){
+switch(option){
 	case 1:
 		break;
 	case 2:
@@ -39,8 +40,8 @@ switch(){
 		break;
 	
 }
-
-
 system("pause");
 return 0;
+}
+
 

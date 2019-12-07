@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
     
-	Menu menu1;
+	menurock menu1;
     system("pause");
     
     while (1) {
