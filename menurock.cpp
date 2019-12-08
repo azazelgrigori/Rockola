@@ -2,32 +2,36 @@
 #include <stdlib.h>
 #include "nodoalbum.h"
 #include "listaalbum.h"
+#include "File.h"
 
 using namespace std;
-
+		
 
 int main()
 {
-	
-	
-		int option,a;
-		string b,c,d;
-		Nodoalbum *Cabeza=NULL;
-		Listaalbum *Albumes = new Listaalbum();
-		Albumes->Set_cabeza(Cabeza);
+	Nodoalbum *Cabeza = NULL;
+	Nodoalbum *aux = NULL;
+	Listaalbum *Albumes = new Listaalbum();
+	Albumes->Set_cabeza(Cabeza);
+	Files file(Cabeza);
 		
-		Nodoalbum *Nuevo;
+	Nodoalbum *Nuevo;
+		
+	int option,a,salida=1;
+	string b,c,d;
+
+	while(1){
 	
-	while(1)
-	{
 		system("cls");
-		cout<<"------Bienvenido elgie la opcion deseada--------"<<endl;
+		cout<<"------Bienvenido elige la opcion deseada--------"<<endl;
 		cout<<"---------------1-Mostrar albumes------------------"<<endl;
 		cout<<"---------------2-Buscar album-------------------"<<endl;
 		cout<<"---------------3-Agregar album------------------"<<endl;
 		cout<<"---------------4-Editar album-------------------"<<endl;
 		cout<<"---------------5-Eliminar album-----------------"<<endl;
-		cout<<"--------------------6-Salir---------------------"<<endl;
+		cout<<"---------------6-Guardar Info-------------------"<<endl;
+		cout<<"---------------7-Cargar Info-------------------"<<endl;
+		cout<<"--------------------8-Salir---------------------"<<endl;
 		cout<<"Opcion: ";
 		cin>>option;
 		
@@ -35,7 +39,7 @@ int main()
 		{
 			case 1:
 				system("cls");
-				cout<<"MOSTRANDO ALBUMES";
+				cout<<"MOSTRANDO ALBUMES"<<endl<<endl;
 				Albumes->Show();
 				system("pause");
 				break;
@@ -93,8 +97,27 @@ int main()
 				system("pause");
 				break;
 			case 5:
+				system("cls");
+				cout<<"Eliminando"<<endl<<endl;
+				cout<<"Ingrese el numero del album a eliminar: ";cin>>a;
+				if(Albumes->buscar(a) == NULL){
+					cout<<"No existe el album a eliminar"<<endl;
+				}else{
+					
+					Albumes->Eliminar(a);
+				}
+				system("cls");
+				cout<<"Eliminado con exito"<<endl;
+				system("pause");
 				break;
 			case 6:
+				file.SaveAlbumes();
+				break;
+			case 7:
+				aux=Albumes->Get_cabeza();
+				file.ReadAlbumes(aux);
+				break;
+			case 8:
 				return 0;
 				break;
 			default:
@@ -103,7 +126,7 @@ int main()
 				break;
 		}
 	}
-return 0;
+	return 0;
 }
 
 
