@@ -1,37 +1,55 @@
 #include <iostream>
+#include <string.h>
 #include "nodoalbum.h"
 
-using namespace std;
+Nodoalbum::Nodoalbum()
+{
+}
 
-void Nodoalbum::Setname(char _name){
-	name = _name;
+Nodoalbum::~Nodoalbum()
+{	
+}
+//sets de nodoalbum
+void Nodoalbum::Setnumber(int Number)
+{
+	number = Number;
 }
 
 
-void Nodoalbum::Setgender(char _gender){
-	gender = _gender;
+void Nodoalbum::Setname(string _name ){
+	name = _name;	
 }
 
 
-void Nodoalbum::Setartist(char _album){
-	album = _album;
+void Nodoalbum::Setgenrer(string _genrer){
+	genrer = _genrer;
 }
 
 
-void Nodoalbum::Setnext(*Nodoalbum _next){
+void Nodoalbum::Setartist(string _artist){
+	artist = _artist;
+}
+
+
+void Nodoalbum::Setnext(Nodoalbum *_next){
 	next = _next;
 }
 
-char Nodoalbum::Getname(){
+//gets nodoalbum
+
+int Nodoalbum::Getnumber(){
+	return number;
+}
+string Nodoalbum::Getname(){
 	return name;
 }
-char Nodoalbum::Getgender(){
-	return gender;
+string Nodoalbum::Getgenrer(){
+	return genrer;
 }
-char Nodoalbum::Getartist(){
+string Nodoalbum::Getartist(){
 	return artist;
 }
-Nodoalbum Nodoalbum::Getnext(){
+Nodoalbum *Nodoalbum::Getnext(){
 	return next;
 }
 

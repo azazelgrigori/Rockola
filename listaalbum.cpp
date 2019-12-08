@@ -26,33 +26,34 @@ Nodoalbum *Listaalbum::Get_ultimo()
 
 void Listaalbum::Agregar(Nodoalbum *Nuevo)
 {
-	if(Get_cabeza()==NULL)
-		Set_cabeza(nuevo);
+	if(Get_cabeza() == NULL)
+		Set_cabeza(Nuevo);
 	else
 		Get_ultimo()->Setnext(Nuevo);
 }
 
-Nodoalbum* Listaalbum::Buscar(int Numero)
+Nodoalbum *Listaalbum::buscar(int Numero)
 {
-	Nodo *Busqueda=Get_cabeza();
-	while(Busqueda!=NULL)and(Busqueda->Get_numero()!=Numero))
-		Busqueda=Busqueda->Get_enlace();
+	Nodoalbum *Busqueda = Get_cabeza();
+	while((Busqueda!=NULL)and(Busqueda->Getnumber() != Numero))
+		Busqueda = Busqueda->Getnext();
 	return Busqueda;
 }
 
 void Listaalbum::Eliminar(int Numero)
 {
-	Nodo *Busqueda=Get_cabeza();
-	Nodo *Anterior=NULL;
-	if(Busqueda->Get_numero()==Numero)
-		Set_cabeza(Get_cabeza()->Get_enlace());
+	Nodoalbum *Busqueda = Get_cabeza();
+	Nodoalbum *Anterior = NULL;
+	if(Busqueda->Getnumber() == Numero){
+		Set_cabeza(Get_cabeza()->Getnext());
+	}
 	else{
-		while(Busqueda!=NULL)and(Busqueda->Get_numero()!=Numero){
+		while((Busqueda != NULL) and (Busqueda->Getnumber() != Numero)){
 			Anterior=Busqueda;
-			Busqueda=Busqueda->Get_enlace();
+			Busqueda=Busqueda->Getnext();
 		}
 		if(Busqueda!=NULL){
-			Anterior->Set_enlace(Busqueda->Get_enlace());
+			Anterior->Setnext(Busqueda->Getnext());
 		}
 	}
 	delete Busqueda;
@@ -60,5 +61,20 @@ void Listaalbum::Eliminar(int Numero)
 
 Listaalbum::~Listaalbum()
 {
+}
+
+void Listaalbum::Show(){
+
+	Nodoalbum *Showing = Get_cabeza();
+	while(Showing != NULL){
+		cout<<"Numero: "<<Showing->Getnumber()<<endl;
+		cout<<"Nombre: "<<Showing->Getname()<<endl;
+		cout<<"Artista: "<<Showing->Getartist()<<endl;
+		cout<<"Genero: "<<Showing->Getgenrer()<<endl;
+		cout<<"******************************************"<<endl;
+		
+		Showing = Showing->Getnext();
+	}
+
 }
 

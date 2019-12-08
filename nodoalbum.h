@@ -1,5 +1,9 @@
 #include <iostream>
+#ifndef NODOALBUM_H
+#define NODOALBUM_H
+
 #include <stdlib.h>
+#include <iostream>
 
 using namespace std;
 
@@ -7,21 +11,28 @@ using namespace std;
 class Nodoalbum
 {
 	private:
-		char name[20];
-		char gender[20];
-		char artist[20];
+		int number;
+		string name;
+		string genrer;
+		string artist;
 		Nodoalbum *next;
 		
 	public:
-		void Setname(char);
-		void Setgender(char);
-		void Setartist(char);
+		Nodoalbum();
+		~Nodoalbum();
+		//sets
+		void Setnumber(int);
+		void Setname(string);
+		void Setgenrer(string);
+		void Setartist(string);
 		void Setnext(Nodoalbum *);
-		
-		char Getname();
-		char Getgender();
-		char Getartist();
-		Nodoalbum Getnext();
+		//gets
+		int Getnumber();
+		string Getname();
+		string Getgenrer();
+		string Getartist();
+		Nodoalbum *Getnext();
 };
 
+#endif
 
